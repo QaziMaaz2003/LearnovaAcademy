@@ -92,8 +92,7 @@ export default function Home() {
         </video>
         <div className="hero-content">
           <h1>Learnova Nexus Academy</h1>
-          <h2 className="hero-subtitle">Where you learn smarter and achieve more</h2>
-          <p>All-in-one platform for lectures, tutors, notes, and exam preparation.</p>
+          <h2 className="hero-subtitle">All-in-one platform for lectures, tutors, notes, and exam preparation. Where you learn smarter and achieve more</h2>
           <div className="hero-buttons">
             <Link to="/signup" className="btn btn-primary">
               Get Started
