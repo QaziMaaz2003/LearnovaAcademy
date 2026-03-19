@@ -109,10 +109,16 @@ export default function Home() {
         <h2>Everything You Need to Succeed</h2>
         <div className="modules-grid">
           {modules.map((module, index) => (
-            <div key={index} className="module-card">
-              <div className="module-icon">{module.icon}</div>
-              <h3>{module.title}</h3>
-              <p>{module.description}</p>
+            <div key={index} className="module-card-wrapper">
+              <div className="module-card">
+                <div className="module-card-front">
+                  <div className="module-icon">{module.icon}</div>
+                </div>
+                <div className="module-card-back">
+                  <h3>{module.title}</h3>
+                  <p>{module.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
