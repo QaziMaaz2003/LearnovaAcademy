@@ -182,11 +182,6 @@
   margin: 0 auto;
   text-align: center;
   background: #6bb3ff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .subjects h2 {
