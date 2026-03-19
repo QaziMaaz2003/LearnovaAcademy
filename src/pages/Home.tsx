@@ -63,19 +63,24 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: 'This platform helped me improve my grades significantly.',
+      quote: 'Learnova Nexus has transformed my learning experience with exceptional tutors and a supportive environment.',
       author: 'Sarah Khan',
-      school: 'XYZ High School'
+      school: 'Army Public School'
     },
     {
-      quote: 'The tutors are incredibly helpful and patient with me.',
+      quote: 'The tutors at Learnova Nexus are incredibly knowledgeable and always ready to help. Best academy ever!',
       author: 'Ahmed Ali',
-      school: 'ABC Academy'
+      school: 'The City School'
     },
     {
-      quote: 'Great notes and excellent community support!',
+      quote: 'Amazing experience with Learnova Nexus. The tutors genuinely care about student success and progress.',
       author: 'Fatima Ahmed',
-      school: 'DEF College'
+      school: 'Cedar College'
+    },
+    {
+      quote: 'Learnova Nexus offers professional tutoring with personalized attention. Highly recommended!',
+      author: 'Ali Hassan',
+      school: 'Highbrow College'
     }
   ]
 
@@ -94,7 +99,7 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         <div className="hero-content">
-          <h1>Learnova Nexus Academy</h1>
+          <h1>Learnova Nexus</h1>
           <h2 className="hero-subtitle">All-in-one platform for lectures, tutors, notes, and exam preparation. Where you learn smarter and achieve more</h2>
           <div className="hero-buttons">
             <Link to="/signup" className="btn btn-primary">
@@ -191,15 +196,25 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="testimonials">
         <h2>What Our Students Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <div className="stars">⭐⭐⭐⭐⭐</div>
-              <p className="quote">"{testimonial.quote}"</p>
-              <p className="author">- {testimonial.author}</p>
-              <p className="school">{testimonial.school}</p>
-            </div>
-          ))}
+        <div className="testimonials-carousel">
+          <div className="testimonials-belt">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <p className="quote">"{testimonial.quote}"</p>
+                <p className="author">- {testimonial.author}</p>
+                <p className="school">{testimonial.school}</p>
+              </div>
+            ))}
+            {testimonials.map((testimonial, index) => (
+              <div key={`duplicate-${index}`} className="testimonial-card">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <p className="quote">"{testimonial.quote}"</p>
+                <p className="author">- {testimonial.author}</p>
+                <p className="school">{testimonial.school}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
