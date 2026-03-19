@@ -47,11 +47,11 @@ export default function Home() {
   ]
 
   const whyChooseUs = [
-    'Expert Tutors',
-    'Exam-Focused Content',
-    'Flexible Learning',
-    'Affordable Pricing',
-    'Personalized Support'
+    { title: 'Expert Tutors', description: 'Learn from highly qualified and experienced tutors dedicated to your success.' },
+    { title: 'Exam-Focused Content', description: 'Curriculum designed specifically to help you ace your exams and achieve top grades.' },
+    { title: 'Flexible Learning', description: 'Study at your own pace with courses and sessions available 24/7 on any device.' },
+    { title: 'Affordable Pricing', description: 'High-quality education without breaking the bank with competitive prices.' },
+    { title: 'Personalized Support', description: 'Get one-on-one guidance and personalized learning plans tailored to your needs.' }
   ]
 
   const steps = [
@@ -145,30 +145,46 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="why-choose">
-        <h2>Why Students Choose Us</h2>
-        <div className="points-grid">
-          {whyChooseUs.map((point, index) => (
-            <div key={index} className="point-card">
-              <div className="point-number">{index + 1}</div>
-              <h3>{point}</h3>
-              <p>Experience quality education at its finest.</p>
+        <div className="why-choose-container">
+          <div className="why-choose-content">
+            <h2>Why Students Choose Us</h2>
+            <div className="points-grid">
+              {whyChooseUs.map((point, index) => (
+                <div key={index} className="point-card">
+                  <div className="point-number">{index + 1}</div>
+                  <h3>{point.title}</h3>
+                  <p>{point.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="why-choose-image">
+            <img src="/choose-us.png" alt="Why choose us" />
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
       <section className="how-it-works">
         <h2>How It Works</h2>
-        <div className="steps-container">
-          {steps.map((step, index) => (
-            <div key={index} className="step-card">
-              <div className="step-circle">{step.number}</div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              {index < steps.length - 1 && <div className="step-arrow">→</div>}
+        <div className="how-it-works-container">
+          <div className="how-it-works-image">
+            <img src="/works.png" alt="How it works" />
+          </div>
+          <div className="how-it-works-content">
+            <div className="steps-container">
+              {steps.map((step, index) => (
+                <div key={index} className="step-card">
+                  <div className="step-circle">{step.number}</div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                  {index === 0 && <div className="step-arrow step-arrow-right">→</div>}
+                  {index === 2 && <div className="step-arrow step-arrow-left">←</div>}
+                  {index !== 0 && index !== 2 && index < steps.length - 1 && <div className="step-arrow">↓</div>}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
