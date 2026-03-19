@@ -359,6 +359,13 @@
   object-fit: contain;
 }
 
+.how-it-works-image video {
+  width: 590px;
+  height: 430px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .how-it-works-content {
   flex: 1;
   min-width: 300px;
@@ -749,6 +756,10 @@
     width: 100%;
   }
 
+  .how-it-works-image video {
+    width: 100%;
+  }
+
   .how-it-works-content {
     width: 100%;
   }
@@ -936,6 +947,10 @@
   }
 
   .how-it-works-image img {
+    width: 100%;
+  }
+
+  .how-it-works-image video {
     width: 100%;
   }
 

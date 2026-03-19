@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          🎓 Academy
+          <img src="/logoweb-removebg-preview.png" alt="Learnova Nexus Logo" className="navbar-logo-image" />
         </Link>
 
         {/* Hamburger Menu */}

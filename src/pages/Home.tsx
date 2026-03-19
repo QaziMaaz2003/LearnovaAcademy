@@ -174,7 +174,16 @@ export default function Home() {
         <h2>How It Works</h2>
         <div className="how-it-works-container">
           <div className="how-it-works-image">
-            <img src="/works.png" alt="How it works" />
+            <video 
+              className="how-it-works-video" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+            >
+              <source src="/media/reading.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div className="how-it-works-content">
             <div className="steps-container">

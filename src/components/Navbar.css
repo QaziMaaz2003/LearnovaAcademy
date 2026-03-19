@@ -1,6 +1,6 @@
 .navbar {
   background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-  padding: 0.75rem 0;
+  padding: 0.1rem 0;
   box-shadow: 0 2px 10px rgba(0, 102, 204, 0.1);
   position: sticky;
   top: 0;
@@ -24,6 +24,11 @@
   text-decoration: none;
   min-width: fit-content;
   transition: opacity 0.3s ease;
+}
+
+.navbar-logo-image {
+  height: 70px;
+  object-fit: contain;
 }
 
 .navbar-logo:hover {
