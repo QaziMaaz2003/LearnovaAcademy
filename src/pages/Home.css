@@ -178,42 +178,53 @@
 /* Featured Subjects Section */
 .subjects {
   padding: 4rem 1.5rem;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  background: #6bb3ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .subjects h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #1a1a2e;
+  color: white;
 }
 
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .subject-card {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-  color: white;
+  background: white;
+  color: #1a1a2e;
   padding: 2rem 1rem;
   border-radius: 12px;
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .subject-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 102, 204, 0.25);
+  background: #f0f8ff;
 }
 
 .subjects-more {
-  color: #666;
+  color: white;
   margin: 1.5rem 0 2rem;
   font-size: 1rem;
 }

@@ -40,7 +40,10 @@ export default function Home() {
     'Physics',
     'Chemistry',
     'Computer Science',
-    'English'
+    'English',
+    'Accounting',
+    'Business',
+    'Biology'
   ]
 
   const whyChooseUs = [
