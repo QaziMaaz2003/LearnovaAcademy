@@ -490,6 +490,92 @@
   }
 }
 
+/* Services Section */
+.services {
+  background: #f8f9fa;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+.services-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.service-item {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.service-item.image-left {
+  flex-direction: row;
+}
+
+.service-item.image-right {
+  flex-direction: row-reverse;
+}
+
+.service-media {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-placeholder {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #6bb3ff 0%, #3399ff 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 102, 204, 0.2);
+}
+
+.service-icon {
+  font-size: 6rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.service-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+.service-content h3 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-content p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.service-detail {
+  color: #555;
+  font-size: 0.95rem;
+}
+
 /* Testimonials Section */
 .testimonials {
   background: #f8f9fa;
@@ -704,6 +790,7 @@
   .subjects h2,
   .why-choose h2,
   .how-it-works h2,
+  .services h2,
   .testimonials h2,
   .free-demo h2,
   .final-cta h2 {
@@ -714,6 +801,7 @@
   .subjects,
   .why-choose,
   .how-it-works,
+  .services,
   .testimonials {
     padding: 2rem 1rem;
   }
@@ -766,6 +854,29 @@
 
   .steps-container {
     max-width: 100%;
+  }
+
+  .service-item {
+    flex-direction: column !important;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-item.image-right {
+    flex-direction: column !important;
+  }
+
+  .service-media {
+    width: 100%;
+  }
+
+  .service-placeholder {
+    width: 100%;
+    height: 250px;
+  }
+
+  .service-content h3 {
+    font-size: 1.5rem;
   }
 
   .free-demo {
@@ -869,6 +980,7 @@
   .subjects h2,
   .why-choose h2,
   .how-it-works h2,
+  .services h2,
   .testimonials h2,
   .free-demo h2,
   .final-cta h2 {

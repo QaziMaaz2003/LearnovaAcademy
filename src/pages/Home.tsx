@@ -202,6 +202,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="services">
+        <h2>Our Services</h2>
+        <div className="services-container">
+          {modules.map((module, index) => (
+            <div key={index} className={`service-item ${index % 2 === 0 ? 'image-right' : 'image-left'}`}>
+              <div className="service-media">
+                <div className="service-placeholder">
+                  <span className="service-icon">{module.icon}</span>
+                </div>
+              </div>
+              <div className="service-content">
+                <h3>{module.title}</h3>
+                <p>{module.description}</p>
+                <p className="service-detail">
+                  Experience comprehensive learning through our {module.title.toLowerCase()} feature. 
+                  Our platform provides {module.title === 'Recorded Lectures' ? 'high-quality topic-wise lectures with past paper solutions to help you master every concept.' : 
+                  module.title === 'Hire a Tutor' ? 'access to expert tutors for long-term personalized learning and guidance.' :
+                  module.title === 'Hourly Tutor' ? 'instant expert help for exam preparation and quick revision sessions.' :
+                  module.title === 'Notes' ? 'extensive free and premium study notes curated by subject experts.' :
+                  module.title === 'Forum' ? 'an active community where you can ask questions and collaborate with peers.' :
+                  'dedicated portal designed specifically for schools and teachers.'}.
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="testimonials">
         <h2>What Our Students Say</h2>
