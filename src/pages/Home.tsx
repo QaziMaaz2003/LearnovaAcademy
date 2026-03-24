@@ -184,24 +184,28 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="why-choose">
-        <div className="why-choose-container">
-          <div className="why-choose-content">
-            <h2>Why Students Choose Us</h2>
-            <div className="points-grid">
-              {whyChooseUs.map((point, index) => (
-                <div key={index} className="point-card">
-                  <div className="point-number">{index + 1}</div>
-                  <h3>{point.title}</h3>
-                  <p>{point.description}</p>
+      {/* Services Section */}
+      <section className="services">
+        <h2>Our Services</h2>
+        <div className="services-container">
+          {modules.map((module, index) => (
+            <div key={index} className={`service-item ${index % 2 === 0 ? 'image-right' : 'image-left'}`}>
+              <div className="service-media">
+                <div className="service-placeholder">
+                  <span className="service-icon">{module.icon}</span>
                 </div>
-              ))}
+              </div>
+              <div className="service-content">
+                <h3>{module.title}</h3>
+                <p>{module.description}</p>
+                <ul className="service-features">
+                  {module.details && module.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className="why-choose-image">
-            <img src="/choose-us.png" alt="Why choose us" />
-          </div>
+          ))}
         </div>
       </section>
 
@@ -238,28 +242,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="services">
-        <h2>Our Services</h2>
-        <div className="services-container">
-          {modules.map((module, index) => (
-            <div key={index} className={`service-item ${index % 2 === 0 ? 'image-right' : 'image-left'}`}>
-              <div className="service-media">
-                <div className="service-placeholder">
-                  <span className="service-icon">{module.icon}</span>
+      {/* Why Choose Us Section */}
+      <section className="why-choose">
+        <div className="why-choose-container">
+          <div className="why-choose-content">
+            <h2>Why Students Choose Us</h2>
+            <div className="points-grid">
+              {whyChooseUs.map((point, index) => (
+                <div key={index} className="point-card">
+                  <div className="point-number">{index + 1}</div>
+                  <h3>{point.title}</h3>
+                  <p>{point.description}</p>
                 </div>
-              </div>
-              <div className="service-content">
-                <h3>{module.title}</h3>
-                <p>{module.description}</p>
-                <ul className="service-features">
-                  {module.details && module.details.map((detail, idx) => (
-                    <li key={idx}>{detail}</li>
-                  ))}
-                </ul>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="why-choose-image">
+            <img src="/choose-us.png" alt="Why choose us" />
+          </div>
         </div>
       </section>
 
