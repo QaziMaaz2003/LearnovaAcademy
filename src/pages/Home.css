@@ -571,9 +571,28 @@
   margin-bottom: 1rem;
 }
 
-.service-detail {
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-features li {
   color: #555;
   font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.service-features li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0066cc;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 /* Testimonials Section */
@@ -879,6 +898,10 @@
     font-size: 1.5rem;
   }
 
+  .service-features li {
+    font-size: 0.9rem;
+  }
+
   .free-demo {
     margin: 0 auto;
     border-radius: 0;
@@ -993,6 +1016,11 @@
 
   .points-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-features li {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
   }
 
   .cta-buttons {

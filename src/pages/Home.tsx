@@ -6,32 +6,68 @@ export default function Home() {
     {
       icon: '🎥',
       title: 'Recorded Lectures',
-      description: 'Topic-wise lectures and past paper solutions.'
+      description: 'Comprehensive, subject-wise and topic-wise organized video lectures designed to align with O & A Level curriculum.',
+      details: [
+        'Covers core concepts in a structured and easy-to-follow manner for effective understanding',
+        'Includes detailed video solutions of past papers to enhance exam preparation',
+        'Enables students to learn at their own pace with unlimited access to content',
+        'Regularly updated material to stay aligned with syllabus requirements'
+      ]
     },
     {
       icon: '👨‍🏫',
       title: 'Hire a Tutor',
-      description: 'Find expert tutors for long-term learning.'
+      description: 'Access to a network of qualified and experienced tutors for both online and in-person sessions.',
+      details: [
+        'Covers a wide range of academic levels including O/A Levels, Matric, Inter, Entry Tests (MCAT, ECAT), University courses, and IELTS preparation',
+        'Personalized tutor matching based on student needs, subject requirements, and preferred learning style',
+        'Flexible scheduling options to accommodate student availability',
+        'Focused academic guidance aimed at improving performance and achieving learning goals'
+      ]
     },
     {
       icon: '⏱️',
       title: 'Hourly Tutor',
-      description: 'Get instant help for exams and quick revision.'
+      description: 'On-demand, one-on-one online tutoring sessions for immediate academic support.',
+      details: [
+        'Specifically designed for short-term preparation, especially before exams (1–2 days prior)',
+        'Targeted guidance on specific topics, concepts, or problem areas',
+        'Intensive and personalized sessions to maximize learning in limited time',
+        'Dedicated tutor support to help students revise efficiently and build confidence'
+      ]
     },
     {
       icon: '📝',
       title: 'Notes',
-      description: 'Access free and premium study notes.'
+      description: 'Well-organized, subject-wise and topic-wise study materials for O & A Level students.',
+      details: [
+        'Availability of both free and premium notes to suit different learning needs',
+        'Includes concise revision notes designed for quick review before exams',
+        'Content prepared to simplify complex concepts and enhance understanding',
+        'Reliable and exam-focused material to support independent study'
+      ]
     },
     {
       icon: '💬',
       title: 'Forum',
-      description: 'Ask questions and learn with other students.'
+      description: 'Interactive online discussion platform designed to promote collaborative learning.',
+      details: [
+        'Allows students to ask questions, share knowledge, and discuss academic topics',
+        'Encourages peer-to-peer support and exchange of study resources',
+        'Provides a space for resolving queries related to subjects, exams, and preparation strategies',
+        'Builds a learning community where students can actively engage and support each other'
+      ]
     },
     {
       icon: '🏫',
       title: 'School Portal',
-      description: 'Dedicated platform for schools and teachers.'
+      description: 'Dedicated, customized platform for each school.',
+      details: [
+        'Teachers can upload lectures, materials, and updates',
+        'Provides students with centralized access to all their learning materials',
+        'Facilitates effective communication between teachers and students',
+        'Supports schools in creating their own structured and independent online learning environment'
+      ]
     }
   ]
 
@@ -216,15 +252,11 @@ export default function Home() {
               <div className="service-content">
                 <h3>{module.title}</h3>
                 <p>{module.description}</p>
-                <p className="service-detail">
-                  Experience comprehensive learning through our {module.title.toLowerCase()} feature. 
-                  Our platform provides {module.title === 'Recorded Lectures' ? 'high-quality topic-wise lectures with past paper solutions to help you master every concept.' : 
-                  module.title === 'Hire a Tutor' ? 'access to expert tutors for long-term personalized learning and guidance.' :
-                  module.title === 'Hourly Tutor' ? 'instant expert help for exam preparation and quick revision sessions.' :
-                  module.title === 'Notes' ? 'extensive free and premium study notes curated by subject experts.' :
-                  module.title === 'Forum' ? 'an active community where you can ask questions and collaborate with peers.' :
-                  'dedicated portal designed specifically for schools and teachers.'}.
-                </p>
+                <ul className="service-features">
+                  {module.details && module.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
