@@ -1869,20 +1869,3 @@
     font-size: 0.8rem;
   }
 }
-
-  .how-it-works-image img {
-    width: 100%;
-  }
-
-  .how-it-works-image video {
-    width: 100%;
-  }
-
-  .how-it-works-content {
-    width: 100%;
-  }
-
-  .steps-container {
-    max-width: 100%;
-  }
-}
