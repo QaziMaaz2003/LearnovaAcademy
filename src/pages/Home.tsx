@@ -191,9 +191,21 @@ export default function Home() {
           {modules.map((module, index) => (
             <div key={index} className={`service-item ${index % 2 === 0 ? 'image-right' : 'image-left'}`}>
               <div className="service-media">
-                <div className="service-placeholder">
-                  <span className="service-icon">{module.icon}</span>
-                </div>
+                {index === 0 ? (
+                  <img src="/record.png" alt="Recorded Lectures" className="service-image" />
+                ) : index === 1 ? (
+                  <img src="/tutor.png" alt="Hire a Tutor" className="service-image" />
+                ) : index === 2 ? (
+                  <img src="/hour.png" alt="Hourly Tutor" className="service-image" />
+                ) : index === 3 ? (
+                  <img src="/notes.jpeg" alt="Notes" className="service-image" />
+                ) : index === 4 ? (
+                  <img src="/forum.png" alt="Forum" className="service-image" />
+                ) : (
+                  <div className="service-placeholder">
+                    <span className="service-icon">{module.icon}</span>
+                  </div>
+                )}
               </div>
               <div className="service-content">
                 <h3>{module.title}</h3>
