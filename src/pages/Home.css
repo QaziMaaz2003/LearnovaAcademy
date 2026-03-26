@@ -190,6 +190,11 @@
   margin: 0 auto;
   text-align: center;
   background: #6bb3ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .subjects h2 {
@@ -881,6 +886,15 @@
     padding: 2.5rem 1.5rem;
   }
 
+  .subjects {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+  }
+
   /* Modules Section */
   .modules-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1206,14 +1220,46 @@
     padding: 1.75rem 1rem;
   }
 
+  .subjects {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .subjects h2 {
+    padding: 1.75rem 1rem 1rem 1rem;
+  }
+
+  .subjects-grid {
+    padding: 0 1rem;
+  }
+
+  .subjects-more {
+    padding: 0 1rem;
+  }
+
+  .subjects-cta {
+    padding: 0 1rem 1.75rem 1rem;
+  }
+
   /* Modules Section */
   .modules-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    max-width: 85%;
+    margin: 0 auto;
   }
 
   .module-card-wrapper {
     height: 140px;
+    perspective: 1200px;
+  }
+
+  .module-card {
+    transform-style: preserve-3d;
+    will-change: transform;
   }
 
   .module-icon {
@@ -1222,21 +1268,27 @@
 
   .module-card-back h3 {
     font-size: 0.9rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .module-card-back p {
     font-size: 0.7rem;
     line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .module-card-front,
   .module-card-back {
     padding: 1rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   /* Subjects Section */
   .subjects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
 
