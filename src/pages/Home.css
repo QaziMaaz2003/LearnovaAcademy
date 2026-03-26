@@ -266,6 +266,7 @@
   text-align: left;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  margin-top: 2rem;
   color: #1a1a2e;
 }
 
@@ -318,7 +319,7 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 0rem;
 }
 
 .why-choose-image img {
@@ -373,7 +374,7 @@
 }
 
 .how-it-works-image video {
-  width: 590px;
+  width: 700px;
   height: 430px;
   object-fit: contain;
   border-radius: 12px;
@@ -583,6 +584,7 @@
   color: #1a1a2e;
   margin-bottom: 1rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .service-content p {
@@ -949,23 +951,31 @@
 
   /* Why Choose Section */
   .why-choose-container {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
     align-items: center;
   }
 
   .why-choose-content {
     width: 100%;
+    display: contents;
   }
 
   .why-choose h2 {
     text-align: center;
+    grid-row: 1;
   }
 
   .why-choose-image {
     width: 100%;
     max-width: 400px;
     height: auto;
+    grid-row: 2;
+  }
+
+  .points-grid {
+    grid-row: 3;
   }
 
   .why-choose-image img {
@@ -1009,7 +1019,6 @@
   .steps-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    max-width: 100%;
   }
 
   .step-card {
@@ -1229,7 +1238,8 @@
   }
 
   .subjects h2 {
-    padding: 1.75rem 1rem 1rem 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    margin-top: -3rem;
   }
 
   .subjects-grid {
@@ -1289,11 +1299,11 @@
   /* Subjects Section */
   .subjects-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .subject-card {
-    padding: 1.2rem 0.8rem;
+    padding: 1.4rem 1rem;
     font-size: 0.9rem;
   }
 
@@ -1331,29 +1341,37 @@
 
   /* Why Choose Section */
   .why-choose-container {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   .why-choose-content {
     width: 100%;
+    display: contents;
   }
 
   .why-choose h2 {
     text-align: center;
     font-size: 1.4rem;
+    grid-row: 1;
   }
 
   .why-choose-image {
     width: 100%;
     height: 250px;
     max-width: 100%;
+    grid-row: 2;
   }
 
   .why-choose-image img {
     width: 100%;
     height: 250px;
     object-fit: cover;
+  }
+
+  .points-grid {
+    grid-row: 3;
   }
 
   /* How It Works Section */
@@ -1393,28 +1411,30 @@
   .steps-container {
     grid-template-columns: 1fr;
     gap: 0.75rem;
-    max-width: 100%;
+    max-width: 85%;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .step-card {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 
   .step-circle {
-    width: 32px;
-    height: 32px;
-    font-size: 0.75rem;
-    margin-bottom: 0.3rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.65rem;
+    margin-bottom: 0.2rem;
   }
 
   .step-card h3 {
-    font-size: 0.8rem;
-    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
   }
 
   .step-card p {
-    font-size: 0.7rem;
-    line-height: 1.3;
+    font-size: 0.65rem;
+    line-height: 1.2;
   }
 
   .step-arrow {
@@ -1426,9 +1446,23 @@
     flex-direction: column !important;
     gap: 1.25rem;
     margin-bottom: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .service-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .service-content h3 {
+    order: -2;
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 
   .service-media {
+    order: -1;
     width: 100%;
     min-width: auto;
   }
