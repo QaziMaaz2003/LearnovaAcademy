@@ -697,6 +697,102 @@
   font-size: 0.9rem;
 }
 
+/* FAQs Section */
+.faqs {
+  background: #6bb3ff;
+  padding: 4rem 1.5rem;
+  margin-top: -8rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqs h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: white;
+  font-weight: 800;
+}
+
+.faqs-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.faq-card {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.faq-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.faq-header h3 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.faq-toggle {
+  font-size: 2rem;
+  color: #0066cc;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-toggle.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  animation: slideDown 0.3s ease-out;
+}
+
+.faq-answer p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Free Demo Section */
 .free-demo {
   background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
@@ -1107,6 +1203,41 @@
   .author,
   .school {
     font-size: 0.85rem;
+  }
+
+  /* FAQs Section */
+  .faqs {
+    padding: 2.5rem 1.5rem;
+    margin-top: 0;
+  }
+
+  .faqs h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .faqs-container {
+    max-width: 100%;
+  }
+
+  .faq-card {
+    margin-bottom: 1.25rem;
+  }
+
+  .faq-header {
+    padding: 1.25rem;
+  }
+
+  .faq-header h3 {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
   }
 
   /* Free Demo Section */
@@ -1554,6 +1685,49 @@
 
   .school {
     font-size: 0.75rem;
+  }
+
+  /* FAQs Section */
+  .faqs {
+    padding: 1.75rem 1rem;
+    margin-top: 2rem;
+    min-height: auto;
+  }
+
+  .faqs h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faqs-container {
+    max-width: 100%;
+  }
+
+  .faq-card {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+
+  .faq-header {
+    padding: 1rem;
+  }
+
+  .faq-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .faq-toggle {
+    font-size: 1.5rem;
+    margin-left: 0.75rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
 
   /* Free Demo Section */

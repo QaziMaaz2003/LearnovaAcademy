@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
@@ -119,6 +120,35 @@ export default function Home() {
       school: 'Highbrow College'
     }
   ]
+
+  const faqs = [
+    {
+      question: 'What subjects do you offer?',
+      answer: 'We offer comprehensive courses in Mathematics, Physics, Chemistry, Computer Science, English, Accounting, Business, Biology, and many more subjects covering O & A Levels, Matric, Inter, and University courses.'
+    },
+    {
+      question: 'How do I get started with Learnova Academy?',
+      answer: 'Simply sign up for a free account on our platform, choose your course or tutor, and start learning immediately. You can access recorded lectures, hire tutors, and download study notes anytime.'
+    },
+    {
+      question: 'Are your tutors qualified and experienced?',
+      answer: 'Yes, all our tutors are highly qualified and experienced professionals dedicated to helping students succeed. We ensure proper vetting and matching based on your specific needs and learning style.'
+    },
+    {
+      question: 'What is the cost of your services?',
+      answer: 'We offer competitive and affordable pricing with flexible plans to suit different budgets. You can choose from free content, premium notes, hourly tutoring, or hire a dedicated tutor for ongoing support.'
+    },
+    {
+      question: 'Can I access courses on mobile devices?',
+      answer: 'Yes, Learnova Academy is fully accessible on mobile devices. You can access video lectures, notes, and communicate with tutors anytime, anywhere from your smartphone or tablet.'
+    },
+    {
+      question: 'Do you provide past paper solutions?',
+      answer: 'Yes, we provide detailed video solutions for past papers to help you prepare effectively for exams. Our solutions break down complex problems into easy-to-understand steps.'
+    }
+  ]
+
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
 
   return (
     <main className="home">
@@ -299,6 +329,32 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faqs-container">
+          {faqs.map((faq, index) => (
+            <div 
+              key={index} 
+              className="faq-card"
+              onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+            >
+              <div className="faq-header">
+                <h3>{faq.question}</h3>
+                <span className={`faq-toggle ${expandedFAQ === index ? 'open' : ''}`}>
+                  {expandedFAQ === index ? '−' : '+'}
+                </span>
+              </div>
+              {expandedFAQ === index && (
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
