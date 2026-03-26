@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -16,17 +18,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #ffffff;
   color: #333;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .main-content {
   flex: 1;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Utility Classes */
@@ -34,6 +41,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 /* Link Styles */
@@ -46,6 +54,13 @@ a {
 a:hover {
   color: #0052a3;
   text-decoration: underline;
+}
+
+/* Responsive Image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Heading Styles */
