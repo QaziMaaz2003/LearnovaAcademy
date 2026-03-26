@@ -633,6 +633,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  margin-top: -14rem;
   color: #1a1a2e;
 }
 
@@ -1089,6 +1090,10 @@
     max-width: 100%;
   }
 
+  .testimonials h2 {
+    margin-top: 0;
+  }
+
   .testimonial-card {
     width: 280px;
     min-width: 280px;
@@ -1512,6 +1517,10 @@
   /* Testimonials Section */
   .testimonials {
     min-height: auto;
+  }
+
+  .testimonials h2 {
+    margin-top: 0;
   }
 
   .testimonials-carousel {
