@@ -1180,11 +1180,13 @@
     height: auto;
     max-width: 100%;
     aspect-ratio: 10/7;
+    margin-top: 1.5rem;
   }
 
   .service-content {
     width: 100%;
     min-width: auto;
+    margin-bottom: 1.5rem;
   }
 
   .service-content h3 {
