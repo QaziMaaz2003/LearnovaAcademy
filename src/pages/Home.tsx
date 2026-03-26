@@ -201,6 +201,8 @@ export default function Home() {
                   <img src="/notes.jpeg" alt="Notes" className="service-image" />
                 ) : index === 4 ? (
                   <img src="/forum.png" alt="Forum" className="service-image" />
+                ) : index === 5 ? (
+                  <img src="/school portal.png" alt="School Portal" className="service-image" />
                 ) : (
                   <div className="service-placeholder">
                     <span className="service-icon">{module.icon}</span>
