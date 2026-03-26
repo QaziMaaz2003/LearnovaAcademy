@@ -16,7 +16,7 @@ export default function Login() {
     <div className="auth-container">
       <div className="auth-card">
         <h1>Welcome Back</h1>
-        <p>Login to your Learnova Academy account</p>
+        <p>Login to your Learnova Nexus account</p>
 
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">

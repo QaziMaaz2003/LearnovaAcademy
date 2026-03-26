@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
@@ -119,6 +120,43 @@ export default function Home() {
       school: 'Highbrow College'
     }
   ]
+
+  const faqs = [
+    {
+      question: 'What are your recorded lectures and how can they help me?',
+      answer: 'Our recorded lectures are comprehensive, subject-wise and topic-wise organized videos designed to align with O & A Level curriculum and other academic standards. They cover core concepts in a structured and easy-to-follow manner, include detailed video solutions of past papers, and enable you to learn at your own pace with unlimited access to the content.'
+    },
+    {
+      question: 'What is the difference between hiring a tutor and hourly sessions?',
+      answer: 'Hire a Tutor service offers access to a network of qualified tutors for ongoing one-on-one sessions (online or in-person) with flexible scheduling and personalized learning plans. Hourly Tutor provides on-demand, short-term preparation specifically for exams. Choose Hire a Tutor for long-term support and Hourly Tutor for last-minute exam prep.'
+    },
+    {
+      question: 'What subjects and academic levels do you cover?',
+      answer: 'We cover a wide range of subjects including Mathematics, Physics, Chemistry, Computer Science, English, Accounting, Business, and Biology across multiple academic levels: O/A Levels, Matric, Inter, University courses, Entry Tests (MCAT, ECAT), and IELTS preparation.'
+    },
+    {
+      question: 'What kind of study materials and notes are available?',
+      answer: 'We provide well-organized, subject-wise and topic-wise study materials available as both free and premium notes. Our notes include concise revision materials designed for quick exam review, simplified explanations of complex concepts, and exam-focused content to support independent study.'
+    },
+    {
+      question: 'How does the interactive forum benefit my learning?',
+      answer: 'Our Forum is an interactive online discussion platform where you can ask questions, share knowledge, and discuss academic topics with peers. It encourages peer-to-peer support, allows exchange of study resources, and builds a learning community where students actively engage and support each other.'
+    },
+    {
+      question: 'What is the School Portal and how does it work?',
+      answer: 'The School Portal is a dedicated, customized platform for each school. Teachers can upload lectures and materials, students get centralized access to all learning materials, it facilitates effective communication between teachers and students, and supports schools in creating their own structured online learning environment.'
+    },
+    {
+      question: 'How do your tutors match my learning needs?',
+      answer: 'We provide personalized tutor matching based on your subject requirements, academic level, learning style preferences, and specific goals. Our tutors are highly qualified and experienced professionals who provide focused academic guidance aimed at improving your performance and achieving your learning objectives.'
+    },
+    {
+      question: 'Can I access all modules and materials on any device?',
+      answer: 'Yes, Learnova Nexus is designed to be fully responsive and accessible on all devices including desktop, tablet, and smartphone. You can access video lectures, interactive modules, study notes, communicate with tutors, and use the forum anytime, anywhere with reliable internet connectivity.'
+    }
+  ]
+
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
 
   return (
     <main className="home">
@@ -299,6 +337,32 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faqs-container">
+          {faqs.map((faq, index) => (
+            <div 
+              key={index} 
+              className="faq-card"
+              onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+            >
+              <div className="faq-header">
+                <h3>{faq.question}</h3>
+                <span className={`faq-toggle ${expandedFAQ === index ? 'open' : ''}`}>
+                  {expandedFAQ === index ? '−' : '+'}
+                </span>
+              </div>
+              {expandedFAQ === index && (
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 

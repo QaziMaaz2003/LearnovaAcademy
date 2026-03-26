@@ -27,7 +27,7 @@ export default function Signup() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1>Join Learnova Academy</h1>
+        <h1>Join Learnova Nexus</h1>
         <p>Create your account and start learning today</p>
 
         <form onSubmit={handleSubmit} className="auth-form">
