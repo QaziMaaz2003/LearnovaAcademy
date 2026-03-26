@@ -1,12 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const navRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navRef}>
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
@@ -51,10 +68,10 @@ export default function Navbar() {
 
         {/* Auth Buttons */}
         <div className="navbar-auth">
-          <Link to="/login" className="btn-login">
+          <Link to="/login" className="btn-login" onClick={() => setIsOpen(false)}>
             Login
           </Link>
-          <Link to="/signup" className="btn-signup">
+          <Link to="/signup" className="btn-signup" onClick={() => setIsOpen(false)}>
             Sign Up
           </Link>
         </div>

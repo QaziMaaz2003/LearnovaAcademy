@@ -245,20 +245,158 @@
   text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .auth-container {
+    min-height: calc(100vh - 100px);
+    padding: 1.5rem 1rem;
+  }
+
   .auth-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .auth-card h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .auth-card > p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"],
+  .form-group select {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .form-remember {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .auth-divider {
+    margin: 1.5rem 0;
+  }
+
+  .social-login {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-btn {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    min-height: calc(100vh - 80px);
+    padding: 1rem 0.75rem;
+  }
+
+  .auth-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
   }
 
   .auth-card h1 {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-card > p {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"],
+  .form-group select {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .form-remember {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .form-remember label {
+    margin: 0;
+  }
+
+  .form-remember a {
+    font-size: 0.85rem;
+  }
+
+  .form-agree {
+    font-size: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .form-agree label {
+    gap: 0.5rem;
+  }
+
+  .btn-submit {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-divider {
+    margin: 1.25rem 0;
+    font-size: 0.85rem;
   }
 
   .social-login {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
   }
 
   .social-btn {
-    width: 100%;
+    padding: 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .auth-footer {
+    font-size: 0.85rem;
+  }
+
+  .auth-link {
+    font-size: 0.85rem;
   }
 }
