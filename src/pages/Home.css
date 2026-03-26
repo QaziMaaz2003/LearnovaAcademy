@@ -319,7 +319,7 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
-  margin-top: 0rem;
+  margin-top: 4rem;
 }
 
 .why-choose-image img {
@@ -972,6 +972,7 @@
     max-width: 400px;
     height: auto;
     grid-row: 2;
+    margin-top: 0;
   }
 
   .points-grid {
@@ -1362,6 +1363,7 @@
     height: 250px;
     max-width: 100%;
     grid-row: 2;
+    margin-top: 0;
   }
 
   .why-choose-image img {
