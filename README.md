@@ -1,6 +1,6 @@
-# Learnova Academy Frontend
+# Learnova Nexus Frontend
 
-A modern React TypeScript frontend application for the Learnova Academy learning platform.
+A modern React TypeScript frontend application for the Learnova Nexus learning platform.
 
 ## Tech Stack
 
@@ -72,4 +72,4 @@ Please ensure all code follows the TypeScript and ESLint guidelines.
 
 ## License
 
-All rights reserved © Learnova Academy
+All rights reserved © Learnova Nexus

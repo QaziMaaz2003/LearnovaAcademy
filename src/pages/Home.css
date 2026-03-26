@@ -672,7 +672,8 @@
   transition: all 0.3s ease;
   flex-shrink: 0;
   width: 350px;
-  height: 220px;
+  min-width: 350px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -993,6 +994,10 @@
     padding: 2.5rem 1.5rem;
   }
 
+  .testimonials {
+    padding: 0 1.5rem 2.5rem 1.5rem;
+  }
+
   .subjects {
     min-height: 100vh;
     display: flex;
@@ -1202,16 +1207,19 @@
 
   .testimonials h2 {
     margin-top: 0;
+    font-size: 1.8rem;
   }
 
   .testimonial-card {
     width: 280px;
     min-width: 280px;
     height: auto;
+    padding: 1rem;
   }
 
   .quote {
     font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .author,
@@ -1667,14 +1675,33 @@
   /* Testimonials Section */
   .testimonials {
     min-height: auto;
+    padding: 0 1rem 2rem 1rem;
+    margin-top: 0;
+    position: relative;
+  }
+
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: #f8f9fa;
   }
 
   .testimonials h2 {
     margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
   }
 
   .testimonials-carousel {
     max-width: 100%;
+  }
+
+  .testimonials-belt {
+    gap: 1rem;
   }
 
   .testimonial-card {
@@ -1723,7 +1750,7 @@
   }
 
   .faq-card {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border-radius: 10px;
   }
 

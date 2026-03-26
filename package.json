@@ -1,7 +1,7 @@
 {
   "name": "learnova-frontend",
   "version": "1.0.0",
-  "description": "Learnova Academy Frontend",
+  "description": "Learnova Nexus Frontend",
   "type": "module",
   "scripts": {
     "dev": "vite",

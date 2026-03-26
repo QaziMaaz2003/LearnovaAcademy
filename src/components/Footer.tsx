@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Learnova Academy</h3>
+          <img src="/logoweb-removebg-preview.png" alt="Learnova Nexus Logo" className="footer-logo" />
           <p>Your complete learning companion for success.</p>
           <div className="social-links">
             <a href="#" aria-label="Facebook">f</a>
@@ -54,7 +54,7 @@ export default function Footer() {
           <span className="separator">•</span>
           <a href="#contact">Contact Us</a>
         </div>
-        <p>&copy; 2026 Learnova Academy. All rights reserved.</p>
+        <p>&copy; 2026 Learnova Nexus. All rights reserved.</p>
       </div>
     </footer>
   )

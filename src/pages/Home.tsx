@@ -123,28 +123,36 @@ export default function Home() {
 
   const faqs = [
     {
-      question: 'What subjects do you offer?',
-      answer: 'We offer comprehensive courses in Mathematics, Physics, Chemistry, Computer Science, English, Accounting, Business, Biology, and many more subjects covering O & A Levels, Matric, Inter, and University courses.'
+      question: 'What are your recorded lectures and how can they help me?',
+      answer: 'Our recorded lectures are comprehensive, subject-wise and topic-wise organized videos designed to align with O & A Level curriculum and other academic standards. They cover core concepts in a structured and easy-to-follow manner, include detailed video solutions of past papers, and enable you to learn at your own pace with unlimited access to the content.'
     },
     {
-      question: 'How do I get started with Learnova Academy?',
-      answer: 'Simply sign up for a free account on our platform, choose your course or tutor, and start learning immediately. You can access recorded lectures, hire tutors, and download study notes anytime.'
+      question: 'What is the difference between hiring a tutor and hourly sessions?',
+      answer: 'Hire a Tutor service offers access to a network of qualified tutors for ongoing one-on-one sessions (online or in-person) with flexible scheduling and personalized learning plans. Hourly Tutor provides on-demand, short-term preparation specifically for exams. Choose Hire a Tutor for long-term support and Hourly Tutor for last-minute exam prep.'
     },
     {
-      question: 'Are your tutors qualified and experienced?',
-      answer: 'Yes, all our tutors are highly qualified and experienced professionals dedicated to helping students succeed. We ensure proper vetting and matching based on your specific needs and learning style.'
+      question: 'What subjects and academic levels do you cover?',
+      answer: 'We cover a wide range of subjects including Mathematics, Physics, Chemistry, Computer Science, English, Accounting, Business, and Biology across multiple academic levels: O/A Levels, Matric, Inter, University courses, Entry Tests (MCAT, ECAT), and IELTS preparation.'
     },
     {
-      question: 'What is the cost of your services?',
-      answer: 'We offer competitive and affordable pricing with flexible plans to suit different budgets. You can choose from free content, premium notes, hourly tutoring, or hire a dedicated tutor for ongoing support.'
+      question: 'What kind of study materials and notes are available?',
+      answer: 'We provide well-organized, subject-wise and topic-wise study materials available as both free and premium notes. Our notes include concise revision materials designed for quick exam review, simplified explanations of complex concepts, and exam-focused content to support independent study.'
     },
     {
-      question: 'Can I access courses on mobile devices?',
-      answer: 'Yes, Learnova Academy is fully accessible on mobile devices. You can access video lectures, notes, and communicate with tutors anytime, anywhere from your smartphone or tablet.'
+      question: 'How does the interactive forum benefit my learning?',
+      answer: 'Our Forum is an interactive online discussion platform where you can ask questions, share knowledge, and discuss academic topics with peers. It encourages peer-to-peer support, allows exchange of study resources, and builds a learning community where students actively engage and support each other.'
     },
     {
-      question: 'Do you provide past paper solutions?',
-      answer: 'Yes, we provide detailed video solutions for past papers to help you prepare effectively for exams. Our solutions break down complex problems into easy-to-understand steps.'
+      question: 'What is the School Portal and how does it work?',
+      answer: 'The School Portal is a dedicated, customized platform for each school. Teachers can upload lectures and materials, students get centralized access to all learning materials, it facilitates effective communication between teachers and students, and supports schools in creating their own structured online learning environment.'
+    },
+    {
+      question: 'How do your tutors match my learning needs?',
+      answer: 'We provide personalized tutor matching based on your subject requirements, academic level, learning style preferences, and specific goals. Our tutors are highly qualified and experienced professionals who provide focused academic guidance aimed at improving your performance and achieving your learning objectives.'
+    },
+    {
+      question: 'Can I access all modules and materials on any device?',
+      answer: 'Yes, Learnova Nexus is designed to be fully responsive and accessible on all devices including desktop, tablet, and smartphone. You can access video lectures, interactive modules, study notes, communicate with tutors, and use the forum anytime, anywhere with reliable internet connectivity.'
     }
   ]
 
