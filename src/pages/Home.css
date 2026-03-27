@@ -820,6 +820,7 @@
 
 /* Free Demo Section */
 .free-demo {
+  display: none;
   background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
   color: white;
   padding: 4rem 1.5rem;
