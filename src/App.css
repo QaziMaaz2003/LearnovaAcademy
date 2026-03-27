@@ -16,10 +16,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   background: #ffffff;
   color: #333;
   width: 100%;
   overflow-x: hidden;
+  font-feature-settings: "kern" 1;
 }
 
 .app {
@@ -61,18 +65,37 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 /* Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   color: #1a1a2e;
   line-height: 1.2;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Paragraph Styles */
 p {
   line-height: 1.6;
   color: #555;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Code Styles */

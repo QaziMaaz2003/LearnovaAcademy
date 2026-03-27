@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem 1.5rem;
   min-height: calc(100vh - 450px);
+  margin-top: 100px;
 }
 
 .page-header {
@@ -81,6 +82,7 @@
 @media (max-width: 768px) {
   .page-container {
     padding: 1.5rem 1rem;
+    margin-top: 90px;
   }
 
   .page-header h1 {
@@ -103,6 +105,10 @@
 }
 
 @media (max-width: 480px) {
+  .page-container {
+    margin-top: 85px;
+  }
+
   .page-header h1 {
     font-size: 1.5rem;
   }

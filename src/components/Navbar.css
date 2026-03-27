@@ -57,13 +57,17 @@
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  padding: 0.6rem 0;
+  padding: 0.6rem 1rem;
   border-bottom: 2px solid transparent;
   font-size: 1rem;
+  border-radius: 4px;
 }
 
 .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   border-bottom-color: white;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .navbar-auth {
@@ -84,18 +88,18 @@
   cursor: pointer;
   font-size: 0.95rem;
 }
-  font-size: 0.95rem;
-}
 
 .btn-login:hover {
   background: white;
-  color: #0066cc;
+  color: #148fea;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-signup {
   padding: 0.6rem 1.6rem;
   background: white;
-  color: #0066cc;
+  color: #148fea;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -109,6 +113,8 @@
   background: transparent;
   color: white;
   border-color: white;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .hamburger {

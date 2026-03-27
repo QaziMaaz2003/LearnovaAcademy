@@ -1,3 +1,18 @@
+/* Text Rendering Optimization for All Devices */
+.hero-content h1,
+.hero-subtitle,
+.hero-content p,
+.modules h2,
+.modules p,
+.subjects h2,
+.services h2,
+.how-it-works h2,
+.testimonials h2 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
