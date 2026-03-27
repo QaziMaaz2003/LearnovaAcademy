@@ -23,6 +23,7 @@ body {
   color: #333;
   width: 100%;
   overflow-x: hidden;
+  padding-top: 70px;
   font-feature-settings: "kern" 1;
 }
 
