@@ -654,19 +654,26 @@
 /* Testimonials Section */
 .testimonials {
   background: #f8f9fa;
-  padding: 4rem 1.5rem;
-  min-height: 100vh;
+  padding: 0 1.5rem 0 1.5rem;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* Desktop - Testimonials Top Padding */
+@media (min-width: 1025px) {
+  .testimonials {
+    padding: 7rem 1.5rem 0 1.5rem;
+  }
+}
+
 .testimonials h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  margin-top: -14rem;
+  margin-top: 0;
   color: #1a1a2e;
 }
 
@@ -1023,7 +1030,7 @@
   }
 
   .testimonials {
-    padding: 0 1.5rem 2.5rem 1.5rem;
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
   }
 
   .subjects {
@@ -1378,6 +1385,16 @@
 
   .step-card:nth-child(4) {
     order: 0;
+  }
+
+  .testimonials {
+    min-height: auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .testimonials h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1814,7 +1831,7 @@
   /* Testimonials Section */
   .testimonials {
     min-height: auto;
-    padding: 0 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
     margin-top: 0;
     position: relative;
   }
