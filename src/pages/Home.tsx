@@ -315,31 +315,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <h2>What Our Students Say</h2>
-        <div className="testimonials-carousel">
-          <div className="testimonials-belt">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="stars">⭐⭐⭐⭐⭐</div>
-                <p className="quote">"{testimonial.quote}"</p>
-                <p className="author">- {testimonial.author}</p>
-                <p className="school">{testimonial.school}</p>
-              </div>
-            ))}
-            {testimonials.map((testimonial, index) => (
-              <div key={`duplicate-${index}`} className="testimonial-card">
-                <div className="stars">⭐⭐⭐⭐⭐</div>
-                <p className="quote">"{testimonial.quote}"</p>
-                <p className="author">- {testimonial.author}</p>
-                <p className="school">{testimonial.school}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQs Section */}
       <section className="faqs">
         <h2>Frequently Asked Questions</h2>
@@ -363,6 +338,31 @@ export default function Home() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials">
+        <h2>What Our Students Say</h2>
+        <div className="testimonials-carousel">
+          <div className="testimonials-belt">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <p className="quote">"{testimonial.quote}"</p>
+                <p className="author">- {testimonial.author}</p>
+                <p className="school">{testimonial.school}</p>
+              </div>
+            ))}
+            {testimonials.map((testimonial, index) => (
+              <div key={`duplicate-${index}`} className="testimonial-card">
+                <div className="stars">⭐⭐⭐⭐⭐</div>
+                <p className="quote">"{testimonial.quote}"</p>
+                <p className="author">- {testimonial.author}</p>
+                <p className="school">{testimonial.school}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
