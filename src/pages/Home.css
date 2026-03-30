@@ -667,6 +667,10 @@
   .testimonials {
     padding: 7rem 1.5rem 0 1.5rem;
   }
+
+  .final-cta {
+    padding: 10rem 1.5rem;
+  }
 }
 
 .testimonials h2 {
