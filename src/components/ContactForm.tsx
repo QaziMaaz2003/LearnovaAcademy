@@ -168,7 +168,7 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={handleChange}
               >
-                <option value="">Select a Topic</option>
+                <option value="" disabled>Select a Topic</option>
                 {subjects.map((subj, index) => (
                   <option key={index} value={subj}>{subj}</option>
                 ))}
@@ -186,7 +186,7 @@ export default function ContactForm() {
                 value={formData.gradeClass}
                 onChange={handleChange}
               >
-                <option value="">Select Grade / Class</option>
+                <option value="" disabled>Select Grade / Class</option>
                 {grades.map((grade, index) => (
                   <option key={index} value={grade}>{grade}</option>
                 ))}
@@ -206,7 +206,7 @@ export default function ContactForm() {
                 value={formData.course}
                 onChange={handleChange}
               >
-                <option value="">Select Course</option>
+                <option value="" disabled>Select Course</option>
                 {courses.map((course, index) => (
                   <option key={index} value={course}>{course}</option>
                 ))}
