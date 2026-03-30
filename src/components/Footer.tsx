@@ -44,9 +44,9 @@ export default function Footer() {
         <div className="footer-section">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:info@learnova.com">info@learnova.com</a></li>
-            <li><a href="tel:+92123456789">+92 (123) 456-789</a></li>
-            <li><p>Your City, Country</p></li>
+            <li><a href="mailto:learnovatutoracademy@gmail.com">learnovatutoracademy@gmail.com</a></li>
+            <li><a href="tel:+923113279075">+923113279075</a></li>
+            <li><p>Karachi, Pakistan</p></li>
           </ul>
         </div>
       </div>
