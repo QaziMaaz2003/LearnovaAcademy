@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ContactForm from '../components/ContactForm'
 import './Home.css'
 
 export default function Home() {
@@ -365,6 +366,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       {/* Free Demo Section */}
       <section className="free-demo">
