@@ -654,7 +654,7 @@
 /* Testimonials Section */
 .testimonials {
   background: #f8f9fa;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem 3rem 1.5rem;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -683,7 +683,7 @@
 
 .testimonials-carousel {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
   overflow: hidden;
   position: relative;
   width: 100%;
