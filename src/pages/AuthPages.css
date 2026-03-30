@@ -7,6 +7,7 @@
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   margin-top: 100px;
   margin-bottom: 0;
+  overflow: clip;
 }
 
 .auth-card {
@@ -17,6 +18,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 450px;
+  overflow: clip;
 }
 
 .auth-card h1 {
@@ -34,13 +36,15 @@
 
 .auth-form {
   margin-bottom: 2rem;
-  overflow: visible;
+  overflow: clip;
 }
 
 .form-group {
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
+  min-width: 0;
+  width: 100%;
 }
 
 .form-group label {
@@ -76,13 +80,14 @@
   background-size: 16px 16px;
   padding-right: 2.8rem;
   cursor: pointer;
-  max-height: 300px;
-  overflow-y: auto;
-  white-space: normal;
   position: relative;
   z-index: 10;
   transform: translateZ(0);
   -webkit-transform: translate3d(0, 0, 0);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .form-group select::-ms-expand {
@@ -95,11 +100,11 @@
   color: #1a1a2e;
   font-size: 1rem;
   font-family: inherit;
-  line-height: 1.5;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  word-wrap: break-word;
+  white-space: nowrap;
+  word-break: break-all;
 }
 
 /* Mobile optimization for select */

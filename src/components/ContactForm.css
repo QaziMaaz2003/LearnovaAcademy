@@ -7,11 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: clip;
 }
 
 .contact-container {
   max-width: 800px;
   width: 100%;
+  overflow: clip;
 }
 
 .contact-header {
@@ -45,6 +47,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  overflow: clip;
 }
 
 .form-row .form-group.full-width {
@@ -56,6 +59,8 @@
   flex-direction: column;
   position: relative;
   z-index: 1;
+  min-width: 0;
+  width: 100%;
 }
 
 .form-label {
@@ -111,13 +116,14 @@
   background-position: right 0.8rem center;
   background-size: 16px 16px;
   padding-right: 2.8rem;
-  max-height: 300px;
-  overflow-y: auto;
-  white-space: normal;
   position: relative;
   z-index: 10;
   transform: translateZ(0);
   -webkit-transform: translate3d(0, 0, 0);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .form-select::-ms-expand {
@@ -130,17 +136,17 @@
   color: #1a1a2e;
   font-size: 1rem;
   font-family: inherit;
-  line-height: 1.5;
+  line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  word-wrap: break-word;
+  white-space: nowrap;
+  word-break: break-all;
 }
 
 /* Mobile optimization for select */
 @media (max-width: 768px) {
   .contact-form {
-    overflow: visible;
+    overflow: clip;
     contain: none;
   }
 
@@ -159,6 +165,9 @@
 }
 
 @media (max-width: 480px) {
+  .contact-form {
+    overflow: clip;
+  }
   .form-select {
     font-size: 16px;
     max-height: 220px;
@@ -174,6 +183,9 @@
 }
 
 @media (max-width: 375px) {
+  .contact-form {
+    overflow: clip;
+  }
   .form-select {
     font-size: 14px;
     max-height: 200px;
