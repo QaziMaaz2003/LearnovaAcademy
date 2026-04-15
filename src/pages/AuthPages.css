@@ -330,10 +330,28 @@
 }
 
 .social-login {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Google OAuth Button Styling */
+.social-login > div {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-login > div > div {
+  width: 100% !important;
+}
+
+.social-login button {
+  width: 100% !important;
 }
 
 .social-btn {
@@ -444,9 +462,22 @@
   }
 
   .social-login {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
+  }
+
+  .social-login > div {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .social-login > div > div {
+    width: 100% !important;
+  }
+
+  .social-login button {
+    width: 100% !important;
   }
 
   .social-btn {
@@ -539,9 +570,22 @@
   }
 
   .social-login {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
+  }
+
+  .social-login > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .social-login > div > div {
+    width: 100% !important;
+  }
+
+  .social-login button {
+    width: 100% !important;
   }
 
   .social-btn {
@@ -657,9 +701,22 @@
   }
 
   .social-login {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0.6rem;
     margin-bottom: 1rem;
+  }
+
+  .social-login > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .social-login > div > div {
+    width: 100% !important;
+  }
+
+  .social-login button {
+    width: 100% !important;
   }
 
   .social-btn {
@@ -772,9 +829,22 @@
   }
 
   .social-login {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0.7rem;
     margin-bottom: 1.4rem;
+  }
+
+  .social-login > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .social-login > div > div {
+    width: 100% !important;
+  }
+
+  .social-login button {
+    width: 100% !important;
   }
 
   .social-btn {
