@@ -90,11 +90,83 @@ export default function TutorDashboard() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [itemToDelete, setItemToDelete] = useState<number | null>(null)
   const [showProfileSettings, setShowProfileSettings] = useState(false)
-  const [profileName, setProfileName] = useState('John Tutor')
-  const [profileEmail, setProfileEmail] = useState('tutor@example.com')
+  const [profileName, setProfileName] = useState('')
+  const [profileEmail, setProfileEmail] = useState('')
+  const [profilePhone, setProfilePhone] = useState('')
+  const [profileBio, setProfileBio] = useState('')
+  const [profileSubjects, setProfileSubjects] = useState('')
+  const [profileQualification, setProfileQualification] = useState('')
+  const [profileAvailability, setProfileAvailability] = useState('')
+  const [profilePicture, setProfilePicture] = useState<string>('')
+  const profilePictureRef = useRef<HTMLInputElement>(null)
+  const profileNameRef = useRef<HTMLInputElement>(null)
+  const profileEmailRef = useRef<HTMLInputElement>(null)
+  const profilePhoneRef = useRef<HTMLInputElement>(null)
+  const profileSubjectsRef = useRef<HTMLInputElement>(null)
+  const profileQualificationRef = useRef<HTMLInputElement>(null)
+  const profileAvailabilityRef = useRef<HTMLInputElement>(null)
+  const profileBioRef = useRef<HTMLTextAreaElement>(null)
 
   const videoInputRef = useRef<HTMLInputElement>(null)
   const noteInputRef = useRef<HTMLInputElement>(null)
+
+  const handleProfileFieldKeyPress = (nextRef: React.RefObject<HTMLInputElement | HTMLTextAreaElement>) => {
+    return (e: React.KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        nextRef.current?.focus()
+      }
+    }
+  }
+
+  const handleEmailKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      if (validateEmail(profileEmail)) {
+        profilePhoneRef.current?.focus()
+      }
+    }
+  }
+
+  const handlePhoneKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      if (validatePhone(profilePhone)) {
+        profileSubjectsRef.current?.focus()
+      }
+    }
+  }
+
+  const [emailError, setEmailError] = useState('')
+  const [phoneError, setPhoneError] = useState('')
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email) {
+      setEmailError('')
+      return true
+    }
+    if (!emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address (e.g., user@example.com)')
+      return false
+    }
+    setEmailError('')
+    return true
+  }
+
+  const validatePhone = (phone: string): boolean => {
+    const digitsOnly = phone.replace(/\D/g, '')
+    if (!phone) {
+      setPhoneError('')
+      return true
+    }
+    if (digitsOnly.length !== 11) {
+      setPhoneError('Please enter a valid 11-digit phone number')
+      return false
+    }
+    setPhoneError('')
+    return true
+  }
 
   const filteredItems = items.filter((item) => {
     const matchesSection = activeSection === 'dashboard' || item.type === (activeSection === 'lectures' ? 'lecture' : 'note')
@@ -648,13 +720,155 @@ export default function TutorDashboard() {
               </button>
             </div>
             <div className="td-profile-modal-content">
+              <div className="td-profile-picture-section">
+                <div className="td-profile-picture-container">
+                  {profilePicture ? (
+                    <>
+                      <img src={profilePicture} alt="Profile" className="td-profile-picture-img" />
+                      <div className="td-picture-overlay">
+                        <button 
+                          type="button"
+                          className="td-picture-action-btn td-picture-edit-btn"
+                          onClick={() => profilePictureRef.current?.click()}
+                          title="Edit Picture"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25Z"/>
+                            <path d="m20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83Z"/>
+                          </svg>
+                        </button>
+                        <button 
+                          type="button"
+                          className="td-picture-action-btn td-picture-delete-btn"
+                          onClick={() => setProfilePicture('')}
+                          title="Delete Picture"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-9l-1 1H5v2h14V4z"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="td-profile-picture-placeholder">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="#d0d5dd" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                <button 
+                  type="button"
+                  className="td-profile-picture-btn"
+                  onClick={() => profilePictureRef.current?.click()}
+                >
+                  {profilePicture ? 'Change Picture' : 'Upload Picture'}
+                </button>
+                <input 
+                  ref={profilePictureRef}
+                  type="file" 
+                  accept="image/*" 
+                  style={{ display: 'none' }}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0]
+                    if (file) {
+                      const reader = new FileReader()
+                      reader.onload = (event) => {
+                        setProfilePicture(event.target?.result as string)
+                      }
+                      reader.readAsDataURL(file)
+                    }
+                  }}
+                />
+              </div>
               <div className="td-profile-field">
                 <label>Full Name</label>
-                <input type="text" value={profileName} onChange={(e) => setProfileName(e.target.value)} />
+                <input 
+                  ref={profileNameRef}
+                  type="text" 
+                  value={profileName} 
+                  onChange={(e) => setProfileName(e.target.value)} 
+                  onKeyPress={handleProfileFieldKeyPress(profileEmailRef)}
+                  placeholder="John Tutor" 
+                />
               </div>
               <div className="td-profile-field">
                 <label>Email</label>
-                <input type="email" value={profileEmail} onChange={(e) => setProfileEmail(e.target.value)} />
+                <input 
+                  ref={profileEmailRef}
+                  type="email" 
+                  value={profileEmail} 
+                  onChange={(e) => {
+                    setProfileEmail(e.target.value)
+                    validateEmail(e.target.value)
+                  }}
+                  onBlur={() => validateEmail(profileEmail)}
+                  onKeyPress={handleEmailKeyPress}
+                  placeholder="tutor@example.com"
+                  className={emailError ? 'td-profile-field-invalid' : ''}
+                />
+                {emailError && <span className="td-field-error">{emailError}</span>}
+              </div>
+              <div className="td-profile-field">
+                <label>Phone Number</label>
+                <input 
+                  ref={profilePhoneRef}
+                  type="tel" 
+                  value={profilePhone} 
+                  onChange={(e) => {
+                    const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 11)
+                    setProfilePhone(digitsOnly)
+                    validatePhone(digitsOnly)
+                  }}
+                  onBlur={() => validatePhone(profilePhone)}
+                  onKeyPress={handlePhoneKeyPress}
+                  placeholder="12345678900"
+                  maxLength={11}
+                  className={phoneError ? 'td-profile-field-invalid' : ''}
+                />
+                {phoneError && <span className="td-field-error">{phoneError}</span>}
+              </div>
+              <div className="td-profile-field">
+                <label>Specialization Subjects</label>
+                <input 
+                  ref={profileSubjectsRef}
+                  type="text" 
+                  value={profileSubjects} 
+                  onChange={(e) => setProfileSubjects(e.target.value)} 
+                  onKeyPress={handleProfileFieldKeyPress(profileQualificationRef)}
+                  placeholder="Mathematics, Physics" 
+                />
+              </div>
+              <div className="td-profile-field">
+                <label>Qualification</label>
+                <input 
+                  ref={profileQualificationRef}
+                  type="text" 
+                  value={profileQualification} 
+                  onChange={(e) => setProfileQualification(e.target.value)} 
+                  onKeyPress={handleProfileFieldKeyPress(profileAvailabilityRef)}
+                  placeholder="Master's Degree" 
+                />
+              </div>
+              <div className="td-profile-field">
+                <label>Availability</label>
+                <input 
+                  ref={profileAvailabilityRef}
+                  type="text" 
+                  value={profileAvailability} 
+                  onChange={(e) => setProfileAvailability(e.target.value)} 
+                  onKeyPress={handleProfileFieldKeyPress(profileBioRef)}
+                  placeholder="Weekdays 3PM-7PM" 
+                />
+              </div>
+              <div className="td-profile-field">
+                <label>Bio / About Me</label>
+                <textarea 
+                  ref={profileBioRef}
+                  value={profileBio} 
+                  onChange={(e) => setProfileBio(e.target.value)} 
+                  placeholder="Experienced educator with passion for teaching"
+                ></textarea>
               </div>
             </div>
             <div className="td-profile-modal-footer">
