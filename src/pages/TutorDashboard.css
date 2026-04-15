@@ -800,7 +800,10 @@
   display: flex;
   gap: 12px;
   margin-top: 28px;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0 24px 0;
+  width: 100%;
 }
 
 .td-btn {
@@ -1195,9 +1198,10 @@
 .td-profile-modal-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 24px 28px;
   border-bottom: 2px solid #d0d5dd;
+  position: relative;
 }
 
 .td-profile-modal-header h3 {
@@ -1205,6 +1209,7 @@
   font-size: 1.3rem;
   color: #1a1a2e;
   font-weight: 600;
+  text-align: center;
 }
 
 .td-profile-modal-close {
@@ -1217,6 +1222,8 @@
   padding: 4px;
   border-radius: 6px;
   transition: background 0.2s ease;
+  position: absolute;
+  right: 24px;
 }
 
 .td-profile-modal-close:hover {

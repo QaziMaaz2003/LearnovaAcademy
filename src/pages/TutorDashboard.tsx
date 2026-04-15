@@ -11,6 +11,7 @@ interface LectureItem {
   status: 'Published' | 'Draft'
   thumbnail: string
   type: 'lecture' | 'note'
+  description?: string
 }
 
 const SAMPLE_LECTURES: LectureItem[] = [
@@ -109,6 +110,9 @@ export default function TutorDashboard() {
 
   const videoInputRef = useRef<HTMLInputElement>(null)
   const noteInputRef = useRef<HTMLInputElement>(null)
+
+  const [isEditMode, setIsEditMode] = useState(false)
+  const [editItemId, setEditItemId] = useState<number | null>(null)
 
   const handleProfileFieldKeyPress = (nextRef: React.RefObject<HTMLInputElement | HTMLTextAreaElement>) => {
     return (e: React.KeyboardEvent) => {
@@ -224,6 +228,32 @@ export default function TutorDashboard() {
     setVideoFile(null)
     setNoteFile(null)
     setShowUploadPanel(false)
+    setIsEditMode(false)
+    setEditItemId(null)
+  }
+
+  const handleSaveChanges = () => {
+    if (!uploadTitle.trim() || editItemId === null) return
+
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === editItemId
+          ? {
+              ...item,
+              title: uploadTitle,
+              subject: uploadSubject,
+              level: uploadLevel,
+              description: uploadDescription,
+              status: uploadVisibility,
+            }
+          : item
+      )
+    )
+    resetUploadForm()
+  }
+
+  const closeUploadPanel = () => {
+    resetUploadForm()
   }
 
   const handleDelete = (id: number) => {
@@ -248,9 +278,11 @@ export default function TutorDashboard() {
     setUploadTitle(item.title)
     setUploadLevel(item.level)
     setUploadSubject(item.subject)
-    setUploadDescription('')
+    setUploadDescription(item.description || '')
     setUploadVisibility(item.status as 'Draft' | 'Published')
     setActiveUploadType(item.type)
+    setIsEditMode(true)
+    setEditItemId(item.id)
     setShowUploadPanel(true)
   }
 
@@ -485,11 +517,11 @@ export default function TutorDashboard() {
       </main>
 
       {/* Upload Panel Modal */}
-      <div className={`td-upload-overlay ${showUploadPanel ? 'td-upload-overlay--visible' : ''}`} onClick={() => setShowUploadPanel(false)}></div>
+      <div className={`td-upload-overlay ${showUploadPanel ? 'td-upload-overlay--visible' : ''}`} onClick={() => closeUploadPanel()}></div>
       <aside className={`td-upload-panel ${showUploadPanel ? 'td-upload-panel--open' : ''}`}>
         <div className="td-upload-panel-header">
           <h2>Upload {activeUploadType === 'lecture' ? 'Lecture' : 'Note'}</h2>
-          <button className="td-upload-close" onClick={() => setShowUploadPanel(false)}><svg width="18" height="18" viewBox="0 0 24 24" fill="#4a6cf7" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/></svg></button>
+          <button className="td-upload-close" onClick={() => closeUploadPanel()}><svg width="18" height="18" viewBox="0 0 24 24" fill="#4a6cf7" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"/></svg></button>
         </div>
 
         <div className="td-upload-type-tabs">
@@ -626,10 +658,18 @@ export default function TutorDashboard() {
           </div>
 
           <div className="td-form-actions">
-            <button className="td-btn td-btn--secondary" onClick={handleSaveAsDraft}>Save as Draft</button>
-            <button className="td-btn td-btn--primary" onClick={handleUpload}>
-              Upload {activeUploadType === 'lecture' ? 'Lecture' : 'Note'}
-            </button>
+            {isEditMode ? (
+              <button className="td-btn td-btn--primary" onClick={handleSaveChanges}>
+                Save Changes
+              </button>
+            ) : (
+              <>
+                <button className="td-btn td-btn--secondary" onClick={handleSaveAsDraft}>Save as Draft</button>
+                <button className="td-btn td-btn--primary" onClick={handleUpload}>
+                  Upload {activeUploadType === 'lecture' ? 'Lecture' : 'Note'}
+                </button>
+              </>
+            )}
           </div>
         </div>
       </aside>
