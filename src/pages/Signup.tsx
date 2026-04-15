@@ -28,7 +28,7 @@ export default function Signup() {
   const handleGoogleSuccess = (credentialResponse: any) => {
     console.log('Google signup successful:', credentialResponse)
     // Send the token to your backend for verification and user creation
-    const token = credentialResponse.credential
+    void credentialResponse.credential
     // Add your backend call here to handle authentication
   }
 
