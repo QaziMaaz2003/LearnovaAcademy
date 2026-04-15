@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { GoogleLogin } from '@react-oauth/google'
 import './AuthPages.css'
 
 export default function Login() {
@@ -10,6 +11,17 @@ export default function Login() {
     e.preventDefault()
     console.log('Login attempt:', { email, password })
     // Add login logic here
+  }
+
+  const handleGoogleSuccess = (credentialResponse: any) => {
+    console.log('Google login successful:', credentialResponse)
+    // Send the token to your backend for verification and user creation
+    void credentialResponse.credential
+    // Add your backend call here to handle authentication
+  }
+
+  const handleGoogleError = () => {
+    console.log('Google login failed')
   }
 
   return (
@@ -59,12 +71,11 @@ export default function Login() {
         <div className="auth-divider">OR</div>
 
         <div className="social-login">
-          <button className="social-btn google">
-            🔍 Login with Google
-          </button>
-          <button className="social-btn github">
-            🐙 Login with GitHub
-          </button>
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            text="signin_with"
+          />
         </div>
 
         <p className="auth-footer">
