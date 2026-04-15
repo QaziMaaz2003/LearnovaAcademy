@@ -42,6 +42,23 @@
   display: block;
 }
 
+.footer-section a:first-child {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  transition: none;
+}
+
+.footer-section a:first-child:hover,
+.footer-section a:first-child:focus {
+  outline: none;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  box-shadow: none;
+  transform: none;
+}
+
 .footer-section h4 {
   font-size: 1.1rem;
   margin-bottom: 1rem;

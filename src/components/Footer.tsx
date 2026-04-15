@@ -6,7 +6,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <img src="/logoweb-removebg-preview.png" alt="Learnova Nexus Logo" className="footer-logo" />
+          <Link to="/">
+            <img src="/logoweb-removebg-preview.png" alt="Learnova Nexus Logo" className="footer-logo" />
+          </Link>
           <p>Your complete learning companion for success.</p>
           <div className="social-links">
             <a href="#" aria-label="Facebook">

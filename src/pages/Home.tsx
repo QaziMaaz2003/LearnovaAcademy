@@ -6,7 +6,7 @@ import './Home.css'
 export default function Home() {
   const modules = [
     {
-      icon: '🎥',
+      icon: '/icons/recorded-lectures.svg',
       title: 'Recorded Lectures',
       description: 'Comprehensive, subject-wise and topic-wise organized video lectures designed to align with O & A Level curriculum.',
       details: [
@@ -17,7 +17,7 @@ export default function Home() {
       ]
     },
     {
-      icon: '👨‍🏫',
+      icon: '/icons/hire-tutor.svg',
       title: 'Hire a Tutor',
       description: 'Access to a network of qualified and experienced tutors for both online and in-person sessions.',
       details: [
@@ -28,7 +28,7 @@ export default function Home() {
       ]
     },
     {
-      icon: '⏱️',
+      icon: '/icons/hourly-tutor.svg',
       title: 'Hourly Tutor',
       description: 'On-demand, one-on-one online tutoring sessions for immediate academic support.',
       details: [
@@ -39,7 +39,7 @@ export default function Home() {
       ]
     },
     {
-      icon: '📝',
+      icon: '/icons/notes.svg',
       title: 'Notes',
       description: 'Well-organized, subject-wise and topic-wise study materials for O & A Level students.',
       details: [
@@ -50,7 +50,7 @@ export default function Home() {
       ]
     },
     {
-      icon: '💬',
+      icon: '/icons/forum.svg',
       title: 'Forum',
       description: 'Interactive online discussion platform designed to promote collaborative learning.',
       details: [
@@ -61,7 +61,7 @@ export default function Home() {
       ]
     },
     {
-      icon: '🏫',
+      icon: '/icons/school-portal.svg',
       title: 'School Portal',
       description: 'Dedicated, customized platform for each school.',
       details: [
@@ -195,7 +195,7 @@ export default function Home() {
             <div key={index} className="module-card-wrapper">
               <div className="module-card">
                 <div className="module-card-front">
-                  <div className="module-icon">{module.icon}</div>
+                  <img src={module.icon} alt={module.title} className="module-icon" />
                 </div>
                 <div className="module-card-back">
                   <h3>{module.title}</h3>
@@ -219,7 +219,7 @@ export default function Home() {
         </div>
         <p className="subjects-more">Many more subjects available</p>
         <Link to="/courses" className="btn btn-outline">
-          👉 View All Subjects
+          View All Subjects
         </Link>
       </section>
 
@@ -244,7 +244,7 @@ export default function Home() {
                   <img src="/school portal.png" alt="School Portal" className="service-image" />
                 ) : (
                   <div className="service-placeholder">
-                    <span className="service-icon">{module.icon}</span>
+                    <img src={module.icon} alt={module.title} className="service-icon" />
                   </div>
                 )}
               </div>
