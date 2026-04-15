@@ -9,6 +9,7 @@ import Notes from './pages/Notes'
 import Forum from './pages/Forum'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import TutorDashboard from './pages/TutorDashboard'
 import './App.css'
 
 function ScrollToTop() {
@@ -24,25 +25,35 @@ function ScrollToTop() {
   return null
 }
 
+function AppLayout() {
+  const { pathname } = useLocation()
+  const isTutorDashboard = pathname === '/tutor-dashboard'
+
+  return (
+    <div className="app">
+      {!isTutorDashboard && <Navbar />}
+      <main className={isTutorDashboard ? '' : 'main-content'}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/tutors" element={<Tutors />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/forum" element={<Forum />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/tutor-dashboard" element={<TutorDashboard />} />
+        </Routes>
+      </main>
+      {!isTutorDashboard && <Footer />}
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="app">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/tutors" element={<Tutors />} />
-            <Route path="/notes" element={<Notes />} />
-            <Route path="/forum" element={<Forum />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppLayout />
     </Router>
   )
 }
